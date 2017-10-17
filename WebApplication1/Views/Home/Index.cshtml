@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Yin";
+}
+
+@model WebApplication1.Models.ViewModel_Index
+
+<div class="jumbotron">
+    <h1>Yin 尹</h1> 
+    2. add pic... 
+    3. hosting.....
+    webapi?
+</div>
+
+<div class="row">
+    <div class="col-md-4">        
+        <p>
+            @Html.Partial("_PartialSummaryView",Model.Number1)                     
+        </p>
+        
+        <p> @Html.ActionLink("More", "Detail", "Home", new { id = "1" }, null)</p>
+    </div>
+    <div class="col-md-4">        
+        <p>
+            @Html.Partial("_PartialSummaryView", Model.Number2)
+        </p>
+        <p><a class="btn btn-default" href="Home/Detail/2">More &raquo;</a></p>
+    </div>
+    <div class="col-md-4">       
+        <p>
+            @Html.Partial("_PartialSummaryView", Model.Number3)
+        </p>
+        <p><a href='@Url.Action("/Detail/3")'>More &raquo;</a></p>
+    </div>
+    <div class="col-md-4">       
+        <p>
+            @Html.Partial("_PartialSummaryView", Model.Number4)
+        </p>
+        <p><a class="btn btn-default" href="Home/Detail/4">More &raquo;</a></p>
+    </div>
+
+</div>

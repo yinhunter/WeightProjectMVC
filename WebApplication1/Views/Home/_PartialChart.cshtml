@@ -1,0 +1,42 @@
+﻿
+@model List<WebApplication1.Models.PersonRecord>
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+
+    window.onload = function () {
+
+        var theModel = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+        var dotset = [];
+               
+        for (var prop in theModel) {
+
+            var tmpObject ={
+                x : new Date(theModel[prop].RecordDate),
+                y : theModel[prop].Weight
+            }
+            dotset.push(tmpObject);
+        }
+        
+        
+	   var chart = new CanvasJS.Chart("chartContainer", {
+		theme: "theme2",
+		title:{
+			text: "Growing Chart"
+		},
+		animationEnabled: false,
+		data: [
+		{
+			type: "line",
+			dataPoints: dotset
+		}
+		]
+	});
+	chart.render();
+    }
+
+</script>
+
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>

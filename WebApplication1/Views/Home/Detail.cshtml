@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "All Data";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@model List<WebApplication1.Models.PersonRecord>
+
+<div class="row">
+    <div class="col-md-2">
+        @{
+            foreach (var record in Model)
+            {
+                <table>
+                    <tr>
+                        <td>
+                            @Convert.ToDateTime(record.RecordDate).ToString("yyyy_MM_dd")
+                        </td>
+
+                        <td>
+                            <b> @Html.DisplayFor(x => record.Weight) </b>
+                        </td>
+
+                        <td>
+                            <b> @Html.DisplayFor(x => record.Note) </b>
+                        </td>
+                    </tr>
+                </table>}
+        }
+    </div>
+
+
+    <div class="col-md-6">
+        @Html.Partial("_PartialChart", Model)
+    </div>
+</div>

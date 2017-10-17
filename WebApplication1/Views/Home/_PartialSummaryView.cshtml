@@ -1,0 +1,37 @@
+﻿
+@model List<WebApplication1.Models.PersonRecord>
+
+
+    @{  
+        var thisPerson = 0;
+    }
+
+        <h2> @Model[0].Name  </h2>
+        <table>
+
+            @foreach (var record in Model)
+            {
+                thisPerson = record.PersonId;
+
+            <tr>
+                <td>
+                    @Convert.ToDateTime(record.RecordDate).ToString("yyyy_MM_dd")
+                </td>
+                <td>
+                    <b> @Html.DisplayFor(x => record.Weight) </b>
+                </td>
+            </tr>
+            }
+        </table>
+
+ <form id="form_create" action='@Url.Action("Create","Home")' method="post">
+
+    <p>
+        @Html.TextBox("weight", "", new { placeholder = "weight", style = "width:50px" })        
+        @Html.Hidden("id", thisPerson)
+
+        <input type="submit"  value="Add" />
+    </p>
+
+</form>
+
