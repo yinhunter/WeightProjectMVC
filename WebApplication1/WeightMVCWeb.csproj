@@ -185,7 +185,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Content\tracking.csv" />
     <None Include="Properties\PublishProfiles\WebApplication120170624111921 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\WeightTracking - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
