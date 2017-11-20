@@ -7,9 +7,10 @@ namespace WebApplication1.DataAccess
     public class GrowDB : IGrowDB
     {
         public List<PersonRecord> GetAllData()
-        {	
-			// using cache 
-			CVSHandler x = new CVSHandler();
+        {
+            // using cache 
+            //CVSHandler x = new CVSHandler();
+            DBHandler x = new DBHandler();
 
             List<PersonRecord> results = x.LoadFile();
 
@@ -30,11 +31,11 @@ namespace WebApplication1.DataAccess
 
         public void InsertNewData(PersonRecord newRecord)
         {
-			// todo: DB logic to add new record
-			// then udpate the cached
+            // todo: DB logic to add new record
+            // then udpate the cached
 
-			CVSHandler x = new CVSHandler();
-			x.AppendRecord(newRecord);
+            DBHandler x = new DBHandler();
+            x.AppendRecord(newRecord);
 
             GetAllData();
         }

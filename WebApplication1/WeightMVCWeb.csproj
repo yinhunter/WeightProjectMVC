@@ -56,6 +56,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -159,6 +160,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WebApiController.cs" />
     <Compile Include="DataAccess\CVSHandler.cs" />
+    <Compile Include="DataAccess\DBHandler.cs" />
     <Compile Include="DataAccess\GrowDB.cs" />
     <Compile Include="DataAccess\IGrowDB.cs" />
     <Compile Include="Global.asax.cs">
