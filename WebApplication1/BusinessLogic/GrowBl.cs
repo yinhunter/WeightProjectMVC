@@ -18,10 +18,7 @@ namespace WebApplication1.BusinessLogic
             var p3 = GetLatestFiveData(3);
             var p4 = GetLatestFiveData(4);
 
-			indexData.Number1 = p1;
-			indexData.Number2 = p2;
-			indexData.Number3 = p3;
-			indexData.Number4 = p4;
+			indexData.AllData = new List<PersonRecord>[4]{ p1, p2, p3, p4 };
 			
 			return indexData;
         }

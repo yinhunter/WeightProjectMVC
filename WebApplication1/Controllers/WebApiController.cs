@@ -42,18 +42,31 @@ namespace WebApplication1.Controllers
             return "api works";
         }
 
+        [HttpOptions]
         [HttpPost]
-        public void Create(string id, string weight)
+        public string Create([FromBody] NewData newdata )
         {
-            if (string.IsNullOrEmpty(id))
+            if (newdata == null || newdata.id == 0)
             {
-                return;
+                return "";
             }
-
-            PersonRecord toinsert = new PersonRecord(0, Convert.ToInt32(id), "", Convert.ToDecimal(weight), 0, DateTime.Now, "");
+           
+            
+            PersonRecord toinsert = new PersonRecord(0, newdata.id, "", newdata.weight, 0, DateTime.Now, "");
 
             GrowBl insertHandler = new GrowBl();
-            insertHandler.InsertNewData(toinsert);
+            insertHandler.InsertNewData(toinsert); 
+
+
+            return newdata.weight.ToString();
         }
     }
+}
+
+
+public class NewData {
+
+    public int id;
+
+    public decimal weight;
 }

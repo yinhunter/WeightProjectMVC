@@ -14,26 +14,26 @@
 <div class="row">
     <div class="col-md-4">        
         <p>
-            @Html.Partial("_PartialSummaryView",Model.Number1)                     
+            @Html.Partial("_PartialSummaryView",Model.AllData[0])                     
         </p>
         
         <p> @Html.ActionLink("More", "Detail", "Home", new { id = "1" }, null)</p>
     </div>
     <div class="col-md-4">        
         <p>
-            @Html.Partial("_PartialSummaryView", Model.Number2)
+            @Html.Partial("_PartialSummaryView", Model.AllData[1])
         </p>
         <p><a class="btn btn-default" href="Home/Detail/2">More &raquo;</a></p>
     </div>
     <div class="col-md-4">       
         <p>
-            @Html.Partial("_PartialSummaryView", Model.Number3)
+            @Html.Partial("_PartialSummaryView", Model.AllData[2])
         </p>
         <p><a href='@Url.Action("/Detail/3")'>More &raquo;</a></p>
     </div>
     <div class="col-md-4">       
         <p>
-            @Html.Partial("_PartialSummaryView", Model.Number4)
+            @Html.Partial("_PartialSummaryView", Model.AllData[3])
         </p>
         <p><a class="btn btn-default" href="Home/Detail/4">More &raquo;</a></p>
     </div>
